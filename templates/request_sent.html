@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="alert alert-success">
+  <h5>Request sent to {{ donor.name }}</h5>
+  <p>Donor phone: <strong>{{ donor.phone }}</strong></p>
+  <p>Please contact the donor directly. (In a production app you'd send email/SMS automatically.)</p>
+</div>
+{% endblock %}

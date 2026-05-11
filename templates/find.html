@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Find Donors</h3>
+<form method="post" class="row g-2 mb-3">
+  <div class="col-md-4">
+    <input class="form-control" name="blood_group" placeholder="Blood Group (A+, O-)" value="{{ blood_group }}">
+  </div>
+  <div class="col-md-4">
+    <input class="form-control" name="city" placeholder="City (Pune)" value="{{ city }}">
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-danger w-100">Search</button>
+  </div>
+</form>
+
+{% if results %}
+  <div class="list-group">
+    {% for d in results %}
+      <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ d.name }} — {{ d.blood_group }}</h5>
+          <small>{{ d.city }}</small>
+        </div>
+        <p class="mb-1">Phone: {{ d.phone }} {% if d.notes %} | {{ d.notes }} {% endif %}</p>
+        <a href="{{ url_for('request_donor', donor_id=d.id) }}" class="btn btn-outline-danger btn-sm">Request Contact</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+{% endblock %}

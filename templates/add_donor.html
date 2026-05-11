@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-md-8 offset-md-2">
+  <h3>Add Donor</h3>
+  <form method="post">
+    <div class="mb-2">
+      <label class="form-label">Name</label>
+      <input class="form-control" name="name" required />
+    </div>
+    <div class="mb-2">
+      <label class="form-label">Blood Group</label>
+      <input class="form-control" name="blood_group" placeholder="e.g., A+, O-" required />
+    </div>
+    <div class="mb-2">
+      <label class="form-label">City</label>
+      <input class="form-control" name="city" required />
+    </div>
+    <div class="mb-2">
+      <label class="form-label">Phone</label>
+      <input class="form-control" name="phone" required />
+    </div>
+    <div class="mb-2">
+      <label class="form-label">Last Donation Date</label>
+      <input class="form-control" name="last_donation" placeholder="YYYY-MM-DD" />
+    </div>
+    <div class="mb-2">
+      <label class="form-label">Notes</label>
+      <textarea class="form-control" name="notes"></textarea>
+    </div>
+    <button class="btn btn-danger">Add Donor</button>
+  </form>
+</div>
+{% endblock %}

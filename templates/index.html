@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-4 bg-light rounded">
+  <h1>Online Blood Finder</h1>
+  <p>Find blood donors near you quickly. Register and add donors to help others.</p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Find donor</h4>
+      <form action="{{ url_for('find') }}" method="post" class="row g-2">
+        <div class="col-5">
+          <input class="form-control" name="blood_group" placeholder="Blood Group (e.g., A+, O-)" />
+        </div>
+        <div class="col-5">
+          <input class="form-control" name="city" placeholder="City (e.g., Pune)" />
+        </div>
+        <div class="col-2">
+          <button class="btn btn-danger w-100" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h4>Why use this?</h4>
+      <ul>
+        <li>Easy to register donors</li>
+        <li>Search by blood group & city</li>
+        <li>Simple request to contact donors</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

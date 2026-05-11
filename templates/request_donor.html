@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Request Contact: {{ donor.name }} ({{ donor.blood_group }})</h3>
+<p>City: {{ donor.city }} | Phone: {{ donor.phone }}</p>
+
+<form method="post" class="col-md-6">
+  <div class="mb-2">
+    <label class="form-label">Your Name</label>
+    <input class="form-control" name="requester_name" required />
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Your Phone</label>
+    <input class="form-control" name="requester_phone" required />
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Message (optional)</label>
+    <textarea class="form-control" name="message"></textarea>
+  </div>
+  <button class="btn btn-danger">Send Request</button>
+</form>
+{% endblock %}
